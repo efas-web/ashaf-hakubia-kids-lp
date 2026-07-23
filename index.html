@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
     
     <style>
+        /* איפוס והגדרות בסיס */
         *, *::before, *::after { box-sizing: border-box; }
         
         html, body {
@@ -18,14 +19,15 @@
 
         :root {
             --primary-blue: #1E3A8A; 
-            --calm-green: #16A34A; /* ירוק רגוע ולא זוהר */
+            --calm-green: #16A34A; /* ירוק רגוע וסולידי */
             --calm-green-hover: #15803D;
             --whatsapp-green: #25D366;
             --whatsapp-hover: #1EBE57;
-            --accent-orange: #EA580C; /* כתום לבאנר העליון */
+            --accent-orange: #EA580C; 
             --accent-gold: #F59E0B;
             --white: #FFFFFF;
             --light-gray: #F1F5F9;
+            --highlight-bg: #EFF6FF; /* רקע כחלחל עדין להבלטה */
             --text-dark: #0F172A;
             --text-gray: #475569;
         }
@@ -33,21 +35,21 @@
         .container { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
         section { padding: 50px 0; }
         .bg-white { background-color: var(--white); }
+        .bg-highlight { background-color: var(--highlight-bg); }
         h1, h2, h3, h4 { font-family: 'Rubik', sans-serif; line-height: 1.2; margin-top: 0; color: var(--text-dark); }
 
-        /* באנר כתום עליון (מלבני) */
+        /* באנר כתום עליון עם חלוקת שורות */
         .top-hook {
             background-color: var(--accent-orange); color: var(--white); text-align: center;
-            padding: 15px 20px; font-weight: 700; font-size: 1.25rem; line-height: 1.4;
-            border-radius: 0; 
+            padding: 15px 20px; line-height: 1.4;
         }
 
-        /* פתיחה והירו */
+        /* הירו (Hero) */
         .hero { text-align: center; padding: 40px 0 20px 0; }
         .main-title { font-size: 3.2rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 5px; }
         .sub-title { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
         
-        /* באנר צהוב עגול וגדול */
+        /* באנר צהוב עגול */
         .summer-banner {
             background: linear-gradient(135deg, #FDE047 0%, #FBBF24 100%); color: #713F12;
             padding: 12px 30px; border-radius: 50px; display: inline-block; font-weight: 900;
@@ -65,7 +67,7 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
-        /* כפתורי עוגן ירוקים ורגועים (ללא חצים) */
+        /* כפתורי עוגן ירוקים ורגועים */
         .anchor-btn {
             display: block; width: 100%; max-width: 400px; margin: 0 auto;
             background-color: var(--calm-green); color: var(--white); text-align: center; 
@@ -74,7 +76,7 @@
         }
         .anchor-btn:hover { background-color: var(--calm-green-hover); transform: translateY(-2px); }
 
-        /* מי אני (עם הטקסט המקורי המלא) */
+        /* מי אני */
         .uri-section {
             background-color: var(--primary-blue); color: var(--white);
             border-radius: 16px; padding: 40px 30px; margin: 10px 0 40px 0;
@@ -106,25 +108,32 @@
         .stars { color: var(--accent-gold); font-size: 1.1rem; margin-top: 2px; }
         .testimonial-text { font-size: 1.15rem; font-style: italic; font-weight: 600; color: var(--text-dark); }
 
-        /* איך זה עובד ומה מקבלים */
+        /* איך זה עובד ומה מקבלים (עם צבע רקע מובחן) */
         .intro-text { font-size: 1.25rem; font-weight: 600; text-align: center; margin-bottom: 30px; color: var(--text-dark); max-width: 650px; margin-left: auto; margin-right: auto; }
         .benefits-list { list-style: none; padding: 0; margin: 0; }
         .benefits-list li {
-            background: var(--light-gray); padding: 20px; border-radius: 8px;
+            background: var(--white); padding: 20px; border-radius: 8px;
             margin-bottom: 15px; border-right: 4px solid var(--primary-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
         .benefits-list strong { display: block; font-size: 1.35rem; margin-bottom: 5px; color: var(--text-dark); }
         .benefits-list span { color: var(--text-gray); font-size: 1.2rem; }
 
-        /* למה קובייה */
-        .why-box {
-            background: var(--white); border-radius: 12px; padding: 35px;
-            border: 1px solid #E2E8F0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: right;
+        /* למה קובייה (שודרג לקלפים ויזואליים לא משעממים) */
+        .why-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .why-card {
+            background: var(--white); border: 2px solid #E2E8F0; border-radius: 12px;
+            padding: 30px 20px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.2s, border-color 0.2s;
         }
-        .why-box strong { color: var(--primary-blue); font-size: 1.3rem; display: block; margin-bottom: 5px; }
-        .why-box p { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-gray); }
-        .why-box p:last-child { margin-bottom: 0; }
+        .why-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+        .why-icon { font-size: 3rem; margin-bottom: 15px; }
+        .why-card strong { display: block; font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 10px; }
+        .why-card p { font-size: 1.15rem; color: var(--text-gray); margin: 0; }
+        
+        @media (min-width: 600px) {
+            .why-grid { grid-template-columns: repeat(3, 1fr); }
+        }
 
         /* שאלות נפוצות */
         .faq-item { background: var(--white); border-radius: 8px; margin-bottom: 12px; border: 1px solid #E2E8F0; }
@@ -173,7 +182,6 @@
         @media (max-width: 600px) {
             .main-title { font-size: 2.6rem; }
             .sub-title { font-size: 1.6rem; }
-            .top-hook { font-size: 1.1rem; padding: 12px 15px; }
             .summer-banner { font-size: 1.35rem; padding: 10px 25px; }
             .uri-section { padding: 30px 20px; }
             .uri-section h2 { font-size: 1.9rem; }
@@ -186,10 +194,11 @@
 </head>
 <body>
 
-    <!-- הבאנר הכתום העליון -->
+    <!-- הבאנר הכתום העליון המחולק -->
     <div class="top-hook">
-        המשחק היחיד שמצליח להוציא ילדים מהמסכים כמו קסם<br>
-        ונותן תחושת הצלחה, ביטחון, רוגע ופיתוח קוגניטיבי
+        <span style="font-size: 1.1em; font-weight: 600;">המשחק היחיד שמצליח</span><br>
+        <span style="font-size: 1.45em; font-weight: 900;">להוציא ילדים מהמסכים כמו קסם</span><br>
+        <span style="font-size: 1.1em; font-weight: 600;">ונותן תחושת הצלחה, ביטחון, רוגע ופיתוח קוגניטיבי</span>
     </div>
 
     <!-- פתיחה והירו -->
@@ -208,10 +217,10 @@
         </div>
     </section>
 
-    <!-- הטקסט המלא של אורי -->
+    <!-- מי אני -->
     <div class="container">
         <section class="uri-section">
-            <h2>מי יעביר את הקורס?</h2>
+            <h2>מי אני?</h2>
             <div class="uri-img">[תמונה של אורי]</div>
             <div class="uri-text">
                 <p><strong>אני אורי צירקין, בן 13 מכרכור. מתחרה בתחרויות קובייה הונגרית ומחזיק בשיא רשמי של 8 שניות.</strong></p>
@@ -263,8 +272,8 @@
         </div>
     </section>
 
-    <!-- איך זה עובד ומה תקבלו -->
-    <section>
+    <!-- איך זה עובד ומה תקבלו (עם רקע כחלחל מובחן) -->
+    <section class="bg-highlight">
         <div class="container">
             <h2 class="section-title">איך זה עובד ומה תקבלו בקורס?</h2>
             
@@ -297,22 +306,26 @@
         </div>
     </section>
 
-    <!-- למה קובייה הונגרית -->
+    <!-- למה קובייה הונגרית (העיצוב החדש והלא יבש!) -->
     <section class="bg-white">
         <div class="container">
             <h2 class="section-title">למה דווקא קובייה הונגרית?</h2>
-            <div class="why-box">
-                <div>
-                    <strong>חוויית הצלחה מיידית</strong>
-                    <p>הקובייה היא כלי מיוחד במינו שבונה ביטחון עצמי גבוה, משפר את יכולת הריכוז ומעניק רוגע נפשי.</p>
+            
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <strong>הצלחה מיידית</strong>
+                    <p>הקובייה בונה ביטחון עצמי גבוה, משפרת את הריכוז ומעניקה רוגע נפשי.</p>
                 </div>
-                <div>
-                    <strong>התפתחות מחוץ למסך</strong>
-                    <p>פותח עולם גדול ובלתי נגמר של התפתחות אישית וקוגניטיבית, הרחק מהטלפון והטלוויזיה.</p>
+                <div class="why-card">
+                    <div class="why-icon">🧠</div>
+                    <strong>מחוץ למסך</strong>
+                    <p>פותח עולם של התפתחות אישית וקוגניטיבית, הרחק מהטלפון והטלוויזיה.</p>
                 </div>
-                <div>
-                    <strong>תחושת מסוגלות וגאווה</strong>
-                    <p>היכולת לפתור קובייה מעניקה לילד תחושת מסוגלות אדירה ואת היכולת להרשים את הסביבה בגאונות שלו.</p>
+                <div class="why-card">
+                    <div class="why-icon">⭐</div>
+                    <strong>גאווה ומסוגלות</strong>
+                    <p>מעניק לילד תחושת מסוגלות אדירה ואת היכולת להרשים את הסביבה.</p>
                 </div>
             </div>
         </div>
