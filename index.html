@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>קורס קובייה הונגרית - אורי צירקין</title>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
         /* איפוס והגדרות בסיס */
@@ -53,19 +53,19 @@
             font-size: 1.6rem; margin-bottom: 30px; box-shadow: 0 4px 10px rgba(251, 191, 36, 0.25);
         }
 
-        /* וידאו - התאמה רספונסיבית ל-Vimeo */
+        /* וידאו - ללא מסגרת מקווקוות! */
         .video-wrapper {
             width: 100%; 
             max-width: 650px; /* הגבלת רוחב למסכי מחשב */
             margin: 0 auto 25px auto;
             background: #E2E8F0; 
             border-radius: 12px; 
-            border: 2px dashed #94A3B8; 
+            border: none; /* הורדנו את המסגרת המקווקוות */
             position: relative;
             padding-bottom: 56.25%; /* יחס גובה-רוחב 16:9 */
             height: 0;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
         .video-wrapper iframe {
             position: absolute;
@@ -74,7 +74,7 @@
             width: 100%;
             height: 100%;
             border: 0;
-            border-radius: 10px; /* קצת פחות מה-wrapper כדי שישתלב */
+            border-radius: 12px;
         }
 
         /* כפתורי עוגן (ירוק סולידי) */
@@ -96,7 +96,10 @@
         .uri-img {
             width: 160px; height: 160px; border-radius: 50%; background: #E2E8F0;
             border: 4px solid var(--accent-gold); margin: 0 auto 20px auto;
-            display: flex; align-items: center; justify-content: center; color: var(--text-gray); font-weight: bold;
+            overflow: hidden; display: flex; align-items: center; justify-content: center;
+        }
+        .uri-img img {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
         }
         .uri-text p { font-size: 1.25rem; margin-bottom: 15px; }
         .uri-text p:last-child { margin-bottom: 0; }
@@ -170,10 +173,10 @@
         .personal-promise strong { color: var(--accent-gold); display: block; font-size: 1.4rem; margin-bottom: 10px; }
         .personal-promise p { margin: 0; color: var(--white); font-size: 1.15rem; line-height: 1.5; font-weight: 400; }
 
-        /* מחיר מתוקן - אותיות בגודל אחיד מעל הכפתורים */
+        /* מחיר מתוקן */
         .price { font-size: 3.5rem; font-weight: 700; color: var(--white); font-family: 'Assistant', sans-serif; margin-bottom: 25px; line-height: 1;}
 
-        /* כפתור משני לשאלות (מעוצב ככפתור מסגרת שקוף) */
+        /* כפתור משני לשאלות */
         .secondary-btn {
             display: block; width: 100%; max-width: 400px; margin: 15px auto 0 auto;
             background-color: transparent; color: #93C5FD; border: 2px solid #93C5FD;
@@ -213,11 +216,10 @@
             
             <div class="summer-banner">תעסוקה מושלמת לחופשים</div>
             
-            <!-- אזור הווידאו עם הקוד המוטמע מ-Vimeo -->
+            <!-- אזור הווידאו ללא מסגרת -->
             <div class="video-wrapper">
                 <iframe src="https://player.vimeo.com/video/1212342558?h=abf8f69610&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;loop=1" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="סרטון LP"></iframe>
             </div>
-            <!-- סקריפט ה-API של Vimeo הנדרש לפעולה תקינה -->
             <script src="https://player.vimeo.com/api/player.js"></script>
 
             <a href="#checkout" class="main-btn">לחצו כאן לפרטים והצטרפות</a>
@@ -227,7 +229,9 @@
     <div class="container">
         <section class="uri-section">
             <h2>מי אני?</h2>
-            <div class="uri-img">[תמונה של אורי]</div>
+            <div class="uri-img">
+                <img src="https://github.com/efas-web/ashaf-hakubia-kids-lp/blob/main/ori.webp.webp?raw=true" alt="אורי צירקין">
+            </div>
             <div class="uri-text">
                 <p><strong>אני אורי צירקין, בן 13 מכרכור. מתחרה בתחרויות קובייה הונגרית ומחזיק בשיא רשמי של 8 שניות.</strong></p>
                 <p>קיבלתי את הקובייה הראשונה שלי בגיל 7, ומאז היא חברה שמלווה אותי לכל מקום.</p>
@@ -310,10 +314,12 @@
         </div>
     </section>
 
+    <!-- סקציית "למה קובייה" המשודרגת (כותרת דקה + משפט מודגש בכחול) -->
     <section class="bg-white">
         <div class="container">
-            <h2 class="section-title" style="margin-bottom: 10px;">למה דווקא קובייה הונגרית?</h2>
-            <p style="text-align: center; font-size: 1.3rem; font-weight: 800; color: var(--accent-orange); margin-bottom: 35px;">
+            <h2 class="section-title" style="margin-bottom: 8px; font-weight: 500;">למה דווקא קובייה הונגרית?</h2>
+            
+            <p style="text-align: center; font-size: 1.5rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 35px; line-height: 1.3;">
                 המשחק היחיד בעולם שמרתק ילדים ללא הפסקה ולאורך שנים
             </p>
             
@@ -342,13 +348,21 @@
         </div>
     </section>
 
+    <!-- שאלות נפוצות מרועננות עם הלינקים לעלי אקספרס -->
     <section>
         <div class="container" style="max-width: 650px;">
             <h2 class="section-title">שאלות נפוצות</h2>
             
             <details class="faq-item">
                 <summary>האם צריך לרכוש קובייה מיוחדת לקורס?</summary>
-                <p>לא. כל קובייה הונגרית סטנדרטית 3x3 שיש לכם בבית תתאים לחלוטין. אם אין לכם אחת כזו, אפשר למצוא בכל חנות צעצועים בכמה עשרות שקלים. (אני יכול גם לשלוח לינק של אליאקספרס לקובייה שאני משתמש בה - פשוט כתבו לי).</p>
+                <p>
+                    לא. כל קובייה הונגרית סטנדרטית 3x3 שיש לכם בבית תתאים לחלוטין. אם אין לכם אחת כזו, אפשר למצוא בכל חנות צעצועים בכמה עשרות שקלים.<br><br>
+                    <strong>רוצים להזמין קובייה איכותית כמו שאורי משתמש בה?</strong><br>
+                    מצורפים כאן לינקים לקוביות שאורי ממליץ עליהן (בתוך כל לינק יש כמה רמות של קובייה):<br>
+                    • <a href="https://s.click.aliexpress.com/e/_c4tFrttX" target="_blank" style="color: var(--primary-blue); font-weight: bold;">קוביית Moyu מעלי אקספרס</a><br>
+                    • <a href="https://s.click.aliexpress.com/e/_c2wnr4jn" target="_blank" style="color: var(--primary-blue); font-weight: bold;">קוביית X-Man מעלי אקספרס</a><br><br>
+                    <small style="color: #64748B; font-style: italic;">* גילוי נאות: אלו לינקים של תוכנית שותפים, מה שאומר שאם תזמינו דרכם, אורי יקבל עמלה קטנה שמפרגנת לו על ההמלצה (וזה כמובן לא עולה לכם שום דבר נוסף).</small>
+                </p>
             </details>
 
             <details class="faq-item">
@@ -363,7 +377,7 @@
         </div>
     </section>
 
-    <!-- אזור הקופה המעודכן -->
+    <!-- אזור הקופה -->
     <section id="checkout" class="order-section">
         <div class="container order-content">
             
