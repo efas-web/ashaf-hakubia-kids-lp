@@ -64,7 +64,7 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
-        /* כפתורי עוגן ורכישה (ירוק סולידי) */
+        /* כפתורי עוגן (ירוק סולידי) */
         .main-btn {
             display: block; width: 100%; max-width: 400px; margin: 0 auto;
             background-color: var(--calm-green); color: var(--white); text-align: center; 
@@ -145,7 +145,7 @@
             background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
             color: var(--white); padding: 70px 0; margin-top: 40px; text-align: center;
         }
-        .order-content { max-width: 600px; margin: 0 auto; }
+        .order-content { max-width: 500px; margin: 0 auto; }
         .order-content h3 { font-size: 2.2rem; color: var(--white); margin-bottom: 5px; }
         .order-content p.subtitle { font-size: 1.3rem; color: #BAE6FD; margin-bottom: 25px; }
         
@@ -157,14 +157,17 @@
         .personal-promise strong { color: var(--accent-gold); display: block; font-size: 1.4rem; margin-bottom: 10px; }
         .personal-promise p { margin: 0; color: var(--white); font-size: 1.15rem; line-height: 1.5; font-weight: 400; }
 
-        /* מחיר */
-        .price { font-size: 3.5rem; font-weight: 700; color: var(--white); font-family: 'Rubik', sans-serif; margin-bottom: 25px; line-height: 1;}
+        /* מחיר מתוקן - אותיות בגודל אחיד מעל הכפתורים */
+        .price { font-size: 3.5rem; font-weight: 700; color: var(--white); font-family: 'Assistant', sans-serif; margin-bottom: 25px; line-height: 1;}
 
-        /* כפתור פנייה משנית */
-        .secondary-link {
-            display: inline-block; margin-top: 20px; color: #93C5FD; font-size: 1.15rem; text-decoration: underline; transition: color 0.2s;
+        /* כפתור משני לשאלות (מעוצב ככפתור מסגרת שקוף) */
+        .secondary-btn {
+            display: block; width: 100%; max-width: 400px; margin: 15px auto 0 auto;
+            background-color: transparent; color: #93C5FD; border: 2px solid #93C5FD;
+            padding: 12px 20px; font-size: 1.15rem; font-weight: 600; text-decoration: none;
+            border-radius: 8px; transition: all 0.2s;
         }
-        .secondary-link:hover { color: var(--white); }
+        .secondary-btn:hover { background-color: rgba(147, 197, 253, 0.1); color: var(--white); border-color: var(--white); }
 
         /* התאמות למובייל */
         @media (max-width: 600px) {
@@ -184,14 +187,12 @@
 </head>
 <body>
 
-    <!-- באנר כתום עליון מחולק -->
     <div class="top-hook">
         <span style="font-size: 1.1em; font-weight: 600;">המשחק היחיד שמצליח</span><br>
         <span style="font-size: 1.45em; font-weight: 900;">להוציא ילדים מהמסכים כמו קסם</span><br>
         <span style="font-size: 1.1em; font-weight: 600;">ונותן תחושת הצלחה, ביטחון, רוגע ופיתוח קוגניטיבי</span>
     </div>
 
-    <!-- פתיחה והירו -->
     <section class="hero bg-white">
         <div class="container">
             <h1 class="main-title">לפתור קובייה הונגרית</h1>
@@ -207,7 +208,6 @@
         </div>
     </section>
 
-    <!-- מי אני -->
     <div class="container">
         <section class="uri-section">
             <h2>מי אני?</h2>
@@ -222,7 +222,6 @@
         </section>
     </div>
 
-    <!-- טסטמוניאלס -->
     <section class="bg-white">
         <div class="container">
             <h2 class="section-title">מה אומרים ההורים והילדים?</h2>
@@ -262,7 +261,6 @@
         </div>
     </section>
 
-    <!-- איך זה עובד ומה תקבלו (עם רקע מובחן alt) -->
     <section class="bg-alt">
         <div class="container">
             <h2 class="section-title">איך זה עובד ומה תקבלו בקורס?</h2>
@@ -296,7 +294,6 @@
         </div>
     </section>
 
-    <!-- למה קובייה הונגרית (עם משפט הכתום ו-4 קוביות) -->
     <section class="bg-white">
         <div class="container">
             <h2 class="section-title" style="margin-bottom: 10px;">למה דווקא קובייה הונגרית?</h2>
@@ -329,7 +326,6 @@
         </div>
     </section>
 
-    <!-- שאלות נפוצות -->
     <section>
         <div class="container" style="max-width: 650px;">
             <h2 class="section-title">שאלות נפוצות</h2>
@@ -351,7 +347,7 @@
         </div>
     </section>
 
-    <!-- אזור הקופה (רקע מלא כחול) -->
+    <!-- אזור הקופה המעודכן -->
     <section id="checkout" class="order-section">
         <div class="container order-content">
             
@@ -366,11 +362,11 @@
             <div class="price">₪111</div>
             
             <a href="https://wa.me/972546881422?text=היי%20אורי,%20הגעתי%20מדף%20הנחיתה%20ואני%20רוצה%20לרכוש%20את%20הקורס!" class="main-btn" target="_blank">
-                למעבר לוואטסאפ 💬
+                למעבר לתשלום בוואטסאפ 💬
             </a>
             
-            <a href="https://wa.me/972546881422?text=היי%20אורי,%20אשמח%20לפרטים%20נוספים%20על%20הקורס" class="secondary-link" target="_blank">
-                יש לכם שאלות? לחצו כאן לבירור פרטים נוספים
+            <a href="https://wa.me/972546881422?text=היי%20אורי,%20יש%20לי%20שאלה%20לגבי%20הקורס" class="secondary-btn" target="_blank">
+                יש לכם שאלות? דברו איתי בוואטסאפ
             </a>
 
         </div>
