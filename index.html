@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
     
     <style>
+        /* איפוס והגדרות בסיס */
         *, *::before, *::after { box-sizing: border-box; }
         
         html, body {
@@ -24,7 +25,7 @@
             --accent-gold: #F59E0B;
             --white: #FFFFFF;
             --light-gray: #F1F5F9;
-            --section-bg-alt: #EBF8FF; /* רקע מובחן וחזק יותר לאיך זה עובד */
+            --section-bg-alt: #EBF8FF; 
             --text-dark: #0F172A;
             --text-gray: #475569;
         }
@@ -63,16 +64,16 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
-        /* כפתורי עוגן אחידים וירוקים-סולידיים */
-        .anchor-btn {
+        /* כפתורי עוגן ורכישה (ירוק סולידי) */
+        .main-btn {
             display: block; width: 100%; max-width: 400px; margin: 0 auto;
             background-color: var(--calm-green); color: var(--white); text-align: center; 
             padding: 16px 20px; font-size: 1.4rem; font-weight: 700; text-decoration: none; 
-            border-radius: 8px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3); transition: transform 0.2s;
+            border-radius: 8px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3); transition: transform 0.2s, background-color 0.2s;
         }
-        .anchor-btn:hover { background-color: var(--calm-green-hover); transform: translateY(-2px); }
+        .main-btn:hover { background-color: var(--calm-green-hover); transform: translateY(-2px); }
 
-        /* מי אני (כחול) */
+        /* מי אני */
         .uri-section {
             background-color: var(--primary-blue); color: var(--white);
             border-radius: 16px; padding: 40px 30px; margin: 10px 0 40px 0;
@@ -104,7 +105,7 @@
         .stars { color: var(--accent-gold); font-size: 1.1rem; margin-top: 2px; }
         .testimonial-text { font-size: 1.15rem; font-style: italic; font-weight: 600; color: var(--text-dark); }
 
-        /* איך זה עובד ומה תקבלו (רקע מובחן) */
+        /* איך זה עובד */
         .intro-text { font-size: 1.25rem; font-weight: 600; text-align: center; margin-bottom: 30px; color: var(--text-dark); max-width: 650px; margin-left: auto; margin-right: auto; }
         .benefits-list { list-style: none; padding: 0; margin: 0; }
         .benefits-list li {
@@ -115,7 +116,7 @@
         .benefits-list strong { display: block; font-size: 1.35rem; margin-bottom: 5px; color: var(--text-dark); }
         .benefits-list span { color: var(--text-gray); font-size: 1.2rem; }
 
-        /* למה קובייה - 4 קוביות מרהיבות */
+        /* למה קובייה - 4 קוביות */
         .why-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .why-card {
             background: var(--white); border: 2px solid #E2E8F0; border-radius: 12px;
@@ -139,59 +140,45 @@
         .faq-item[open] summary::after { content: '-'; }
         .faq-item p { padding: 0 20px 20px; margin: 0; color: var(--text-gray); font-size: 1.15rem; }
 
-        /* הקופה - סיום (רקע מלא ומחיר ליד הלחצן) */
+        /* הקופה - סיום (רקע כחול מלא) */
         .order-section {
             background: linear-gradient(135deg, #1E3A8A 0%, #0F172A 100%);
-            color: var(--white); padding: 70px 0; margin-top: 40px;
+            color: var(--white); padding: 70px 0; margin-top: 40px; text-align: center;
         }
-        .order-box {
-            background: var(--white); color: var(--text-dark); border-radius: 16px;
-            padding: 40px 25px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-            max-width: 550px; margin: 0 auto;
-        }
-        .order-box h3 { font-size: 1.9rem; color: var(--primary-blue); margin-bottom: 5px; }
+        .order-content { max-width: 600px; margin: 0 auto; }
+        .order-content h3 { font-size: 2.2rem; color: var(--white); margin-bottom: 5px; }
+        .order-content p.subtitle { font-size: 1.3rem; color: #BAE6FD; margin-bottom: 25px; }
         
-        /* אזור המחיר והכפתור בשורה אחת או צמודים */
-        .checkout-flex {
-            display: flex; align-items: center; justify-content: center; gap: 20px;
-            margin: 20px 0; background: var(--light-gray); padding: 20px; border-radius: 12px;
-        }
-        .price { font-size: 3.5rem; font-weight: 900; color: var(--text-dark); font-family: 'Rubik', sans-serif; line-height: 1;}
-        .price span { font-size: 0.4em; vertical-align: super; }
-        
+        /* ההבטחה האישית */
         .personal-promise {
-            background: #FFFBEB; border: 2px solid #FDE68A; border-radius: 12px;
-            padding: 20px; text-align: center; margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.1);
+            background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px; padding: 25px 20px; text-align: center; margin-bottom: 30px;
         }
-        .personal-promise strong { color: #B45309; display: block; font-size: 1.3rem; margin-bottom: 8px; }
-        .personal-promise p { margin: 0; color: #713F12; font-size: 1.1rem; line-height: 1.4; font-weight: 600; }
+        .personal-promise strong { color: var(--accent-gold); display: block; font-size: 1.4rem; margin-bottom: 10px; }
+        .personal-promise p { margin: 0; color: var(--white); font-size: 1.15rem; line-height: 1.5; font-weight: 400; }
 
-        .whatsapp-explanation {
-            background: #F0FDF4; border: 1px solid #BBF7D0; color: #166534;
-            padding: 12px; border-radius: 8px; font-size: 1.05rem; font-weight: 600;
-            margin: 0 0 20px 0; line-height: 1.4;
-        }
+        /* מחיר */
+        .price { font-size: 3.5rem; font-weight: 700; color: var(--white); font-family: 'Rubik', sans-serif; margin-bottom: 25px; line-height: 1;}
 
-        .whatsapp-btn {
-            display: block; width: 100%; background-color: var(--calm-green); color: var(--white);
-            padding: 16px 20px; font-size: 1.3rem; font-weight: 800; text-decoration: none;
-            border-radius: 8px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
-            transition: background-color 0.2s; text-align: center;
+        /* כפתור פנייה משנית */
+        .secondary-link {
+            display: inline-block; margin-top: 20px; color: #93C5FD; font-size: 1.15rem; text-decoration: underline; transition: color 0.2s;
         }
-        .whatsapp-btn:hover { background-color: var(--calm-green-hover); }
+        .secondary-link:hover { color: var(--white); }
 
         /* התאמות למובייל */
         @media (max-width: 600px) {
             .main-title { font-size: 2.6rem; }
             .sub-title { font-size: 1.6rem; }
+            .top-hook { font-size: 1.1rem; padding: 12px 15px; }
             .summer-banner { font-size: 1.35rem; padding: 10px 25px; }
             .uri-section { padding: 30px 20px; }
             .uri-section h2 { font-size: 1.9rem; }
             .section-title { font-size: 1.9rem; }
-            .anchor-btn { font-size: 1.25rem; }
-            .checkout-flex { flex-direction: column; gap: 10px; padding: 15px; }
-            .price { font-size: 3rem; }
+            .main-btn { font-size: 1.25rem; }
+            .order-content h3 { font-size: 1.8rem; }
+            .price { font-size: 3.2rem; }
+            .personal-promise strong { font-size: 1.25rem; }
         }
     </style>
 </head>
@@ -216,7 +203,7 @@
                 [סרטון מבוא והדגמה]
             </div>
 
-            <a href="#checkout" class="anchor-btn">לחצו כאן לפרטים והצטרפות</a>
+            <a href="#checkout" class="main-btn">לחצו כאן לפרטים והצטרפות</a>
         </div>
     </section>
 
@@ -304,7 +291,7 @@
             </ul>
             
             <div style="margin-top: 40px;">
-                <a href="#checkout" class="anchor-btn">לחצו כאן לפרטים והצטרפות</a>
+                <a href="#checkout" class="main-btn">לחצו כאן לפרטים והצטרפות</a>
             </div>
         </div>
     </section>
@@ -349,7 +336,7 @@
             
             <details class="faq-item">
                 <summary>האם צריך לרכוש קובייה מיוחדת לקורס?</summary>
-                <p>לא. כל קובייה הונגרית סטנדרטית 3x3 שיש לכם בבית תתאים לחלוטין. אם אין לכם אחת כזו, אפשר למצוא בכל חנות צעצועים בכמה עשרות שקלים (או שאני יכול לשלוח לכם לינק של אליאקספרס לקובייה שאני משתמש בה - פשוט כתבו לי).</p>
+                <p>לא. כל קובייה הונגרית סטנדרטית 3x3 שיש לכם בבית תתאים לחלוטין. אם אין לכם אחת כזו, אפשר למצוא בכל חנות צעצועים בכמה עשרות שקלים. (אני יכול גם לשלוח לינק של אליאקספרס לקובייה שאני משתמש בה - פשוט כתבו לי).</p>
             </details>
 
             <details class="faq-item">
@@ -359,37 +346,33 @@
             
             <details class="faq-item">
                 <summary>מה קורה אם הילד לא מבין שלב מסוים?</summary>
-                <p>זה היופי בקורס וידאו! הילד יכול תמיד ללחוץ על "אחורה", לצפות שוב ושוב באותו החלק עד שהוא קולט את התנועה. השיטה בנויה בצורה חזרתית שמבטיחה הצלחה, ואני גם זמין תמיד לעזור.</p>
+                <p>זה היופי בקורס וידאו! הילד יכול תמיד ללחוץ על "אחורה", לצפות שוב ושוב באותו החלק עד שהוא קולט את התנועה. השיטה בנויה בצורה חזרתית שמבטיחה הצלחה.</p>
             </details>
         </div>
     </section>
 
-    <!-- אזור הקופה עם רקע מלא -->
+    <!-- אזור הקופה (רקע מלא כחול) -->
     <section id="checkout" class="order-section">
-        <div class="container">
-            <div class="order-box">
-                <h3>קורס קובייה הונגרית מלא</h3>
-                <p style="font-size: 1.2rem; margin: 0; color: var(--text-gray);">מאפס לפתרון מלא ב-7 ימים</p>
-                
-                <!-- אזור המחיר והכפתור בשורה אחת ברורה -->
-                <div class="checkout-flex">
-                    <div class="price"><span>₪</span>111</div>
-                    <div style="flex-grow: 1;">
-                        <div class="whatsapp-explanation" style="margin-bottom: 10px; text-align: right;">
-                            לחיצה תעביר לוואטסאפ לתיאום תשלום (Bit / PayBox) וקבלת גישה מיידית!
-                        </div>
-                        <a href="https://wa.me/972546881422?text=היי%20אורי,%20הגעתי%20מדף%20הנחיתה%20ואני%20רוצה%20לרכוש%20את%20הקורס!%20אשמח%20לתאם%20תשלום%20בביט%20או%20פייבוקס" class="whatsapp-btn" target="_blank">
-                            למעבר לתיאום תשלום בוואטסאפ
-                        </a>
-                    </div>
-                </div>
-
-                <!-- ההבטחה האישית המודגשת -->
-                <div class="personal-promise">
-                    <strong>ההבטחה האישית שלי אליכם:</strong>
-                    <p>אני פה לכל שאלה! אם הילד נתקע בשלב מסוים, אתם תמיד יכולים לשלוח לי הודעה בוואטסאפ ואני אעזור לו בשמחה עד שיצליח לפתור את הקובייה. אתם לא לבד!</p>
-                </div>
+        <div class="container order-content">
+            
+            <h3>קורס קובייה הונגרית מלא</h3>
+            <p class="subtitle">מאפס לפתרון מלא ב-7 ימים</p>
+            
+            <div class="personal-promise">
+                <strong>ההבטחה האישית שלי אליכם:</strong>
+                <p>אני פה לכל שאלה! אם הילד נתקע בשלב מסוים, אתם תמיד יכולים לשלוח לי הודעה בוואטסאפ ואני אעזור לו בשמחה עד שיצליח לפתור את הקובייה. אתם לא לבד!</p>
             </div>
+            
+            <div class="price">₪111</div>
+            
+            <a href="https://wa.me/972546881422?text=היי%20אורי,%20הגעתי%20מדף%20הנחיתה%20ואני%20רוצה%20לרכוש%20את%20הקורס!" class="main-btn" target="_blank">
+                למעבר לוואטסאפ 💬
+            </a>
+            
+            <a href="https://wa.me/972546881422?text=היי%20אורי,%20אשמח%20לפרטים%20נוספים%20על%20הקורס" class="secondary-link" target="_blank">
+                יש לכם שאלות? לחצו כאן לבירור פרטים נוספים
+            </a>
+
         </div>
     </section>
 
