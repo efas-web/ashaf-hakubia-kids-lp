@@ -8,10 +8,10 @@
         @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;500;700;900&display=swap');
         
         :root {
-            --primary: #1E3A8A; /* כחול עמוק וסמכותי */
-            --secondary: #25D366; /* ירוק וואטסאפ לפעולה */
+            --primary: #1E3A8A; 
+            --secondary: #25D366; 
             --secondary-hover: #1EBE57;
-            --accent: #F59E0B; /* כתום/זהב להדגשות ואחריות */
+            --accent: #F59E0B; 
             --bg-light: #F8FAFC;
             --text-main: #1E293B;
             --text-muted: #475569;
@@ -26,301 +26,122 @@
             line-height: 1.6; 
         }
 
-        /* מבנה כללי */
-        section {
-            padding: 60px 20px;
-        }
-        
+        section { padding: 60px 20px; }
         .section-white { background-color: #FFFFFF; }
         .section-light { background-color: var(--bg-light); }
-        
-        .container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-
+        .container { max-width: 800px; margin: 0 auto; }
         h1, h2, h3 { line-height: 1.2; margin-top: 0; }
         
-        /* אזור פתיחה (Hero) */
+        /* Hero */
         .hero {
             text-align: center;
             padding: 50px 20px 40px;
             background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
         }
-        .hero h1 {
-            color: var(--primary);
-            font-size: 2.8em;
-            font-weight: 900;
-            margin-bottom: 15px;
-        }
-        .hero h2 {
-            font-size: 1.4em;
-            font-weight: 500;
-            color: var(--text-muted);
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        .hero h1 { color: var(--primary); font-size: 2.8em; font-weight: 900; margin-bottom: 15px; }
+        .hero h2 { font-size: 1.4em; font-weight: 500; color: var(--text-muted); margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-        /* סרטון / תמונה */
+        /* Media */
         .media-placeholder { 
-            width: 100%; 
-            border-radius: 16px; 
-            background: #E2E8F0; 
-            text-align: center; 
-            padding: 100px 20px; 
-            border: 2px dashed #94A3B8; 
-            color: var(--text-muted);
-            font-weight: bold;
-            font-size: 1.2em;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-            position: relative;
+            width: 100%; border-radius: 16px; background: #E2E8F0; text-align: center; 
+            padding: 100px 20px; border: 2px dashed #94A3B8; color: var(--text-muted);
+            font-weight: bold; font-size: 1.2em; box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            box-sizing: border-box; position: relative;
         }
         .media-placeholder::after {
-            content: "▶";
-            font-size: 3em;
-            color: rgba(0,0,0,0.2);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
+            content: "▶"; font-size: 3em; color: rgba(0,0,0,0.2); position: absolute;
+            top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 0;
         }
 
-        /* כפתורים */
+        /* Buttons */
         .cta-btn { 
-            display: inline-block; 
-            width: 100%; 
-            max-width: 450px; 
-            margin: 20px auto; 
-            background-color: var(--secondary); 
-            color: white; 
-            text-align: center; 
-            padding: 18px 24px; 
-            text-decoration: none; 
-            font-size: 1.4em; 
-            font-weight: 700; 
-            border-radius: 50px; 
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); 
-            transition: all 0.3s ease; 
-            box-sizing: border-box;
-            border: none;
-            cursor: pointer;
+            display: inline-block; width: 100%; max-width: 450px; margin: 20px auto; 
+            background-color: var(--secondary); color: white; text-align: center; 
+            padding: 18px 24px; text-decoration: none; font-size: 1.4em; font-weight: 700; 
+            border-radius: 50px; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); 
+            transition: all 0.3s ease; box-sizing: border-box; border: none; cursor: pointer;
         }
-        .cta-btn:hover { 
-            transform: translateY(-3px); 
-            background-color: var(--secondary-hover);
-            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4); 
-        }
-        
-        .sub-cta {
-            text-align: center;
-            font-size: 0.9em;
-            color: var(--text-muted);
-            margin-top: -10px;
-        }
+        .cta-btn:hover { transform: translateY(-3px); background-color: var(--secondary-hover); box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4); }
+        .sub-cta { text-align: center; font-size: 0.9em; color: var(--text-muted); margin-top: -10px; }
 
-        /* מה מקבלים - פיצ'רים */
-        .features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .feature-card {
-            background: #FFFFFF;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            border: 1px solid #E2E8F0;
-            display: flex;
-            align-items: flex-start;
-        }
-        .feature-icon {
-            font-size: 2em;
-            margin-left: 15px;
-            line-height: 1;
-        }
-        .feature-content h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.2em;
-            color: var(--primary);
-        }
-        .feature-content p {
-            margin: 0;
-            color: var(--text-muted);
-        }
-
-        /* מי אני */
+        /* About Uri */
         .about-box {
-            background: #FFFFFF;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            text-align: center;
+            background: #FFFFFF; border-radius: 20px; padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center;
         }
         .about-image {
-            width: 150px;
-            height: 150px;
-            background: #E2E8F0;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            border: 4px solid var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-            font-weight: bold;
+            width: 150px; height: 150px; background: #E2E8F0; border-radius: 50%;
+            margin: 0 auto 20px; border: 4px solid var(--primary); display: flex;
+            align-items: center; justify-content: center; color: var(--text-muted); font-weight: bold;
         }
 
-        /* המלצות */
-        .testimonials {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+        .feature-card {
+            background: #FFFFFF; padding: 25px; border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid #E2E8F0; display: flex; align-items: flex-start;
         }
+        .feature-icon { font-size: 2em; margin-left: 15px; line-height: 1; }
+        .feature-content h4 { margin: 0 0 5px 0; font-size: 1.2em; color: var(--primary); }
+        .feature-content p { margin: 0; color: var(--text-muted); }
+
+        /* Testimonials */
+        .testimonials { display: grid; grid-template-columns: 1fr; gap: 20px; }
         .testimonial-card {
-            background: #F8FAFC;
-            padding: 30px;
-            border-radius: 16px;
-            position: relative;
-            border: 1px solid #E2E8F0;
+            background: #F8FAFC; padding: 30px; border-radius: 16px; position: relative; border: 1px solid #E2E8F0;
         }
         .testimonial-card::before {
-            content: '"';
-            font-size: 4em;
-            color: var(--accent);
-            opacity: 0.2;
-            position: absolute;
-            top: -10px;
-            right: 20px;
-            font-family: serif;
+            content: '"'; font-size: 4em; color: var(--accent); opacity: 0.2;
+            position: absolute; top: -10px; right: 20px; font-family: serif;
         }
-        .testimonial-text {
-            font-size: 1.1em;
-            font-style: italic;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
-        }
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary);
-        }
+        .testimonial-text { font-size: 1.1em; font-style: italic; margin-bottom: 15px; position: relative; z-index: 1; }
+        .testimonial-author { font-weight: 700; color: var(--primary); }
 
-        /* אחריות (Risk Reversal) */
+        /* Guarantee */
         .guarantee-box {
-            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
-            border: 2px solid var(--accent);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            margin: 40px 0;
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.1);
+            background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%); border: 2px solid var(--accent);
+            border-radius: 16px; padding: 30px; text-align: center; margin: 40px 0; box-shadow: 0 10px 20px rgba(245, 158, 11, 0.1);
         }
-        .guarantee-box h3 {
-            color: #B45309;
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
+        .guarantee-box h3 { color: #B45309; font-size: 1.8em; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 10px; }
         
-        /* שאלות ותשובות (FAQ) */
-        .faq-item {
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            overflow: hidden;
-        }
-        .faq-item summary {
-            padding: 20px;
-            font-weight: 700;
-            font-size: 1.1em;
-            cursor: pointer;
-            color: var(--primary);
-            list-style: none;
-            position: relative;
-        }
+        /* FAQ */
+        .faq-item { background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 8px; margin-bottom: 10px; overflow: hidden; }
+        .faq-item summary { padding: 20px; font-weight: 700; font-size: 1.1em; cursor: pointer; color: var(--primary); list-style: none; position: relative; }
         .faq-item summary::-webkit-details-marker { display: none; }
-        .faq-item summary::after {
-            content: '+';
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 1.5em;
-            color: var(--accent);
-        }
+        .faq-item summary::after { content: '+'; position: absolute; left: 20px; top: 50%; transform: translateY(-50%); font-size: 1.5em; color: var(--accent); }
         .faq-item[open] summary::after { content: '-'; }
-        .faq-item p {
-            padding: 0 20px 20px;
-            margin: 0;
-            color: var(--text-muted);
-        }
+        .faq-item p { padding: 0 20px 20px; margin: 0; color: var(--text-muted); }
 
-        /* קופסת מחיר סופית */
+        /* Price Box */
         .price-box {
-            background: #FFFFFF;
-            border: 3px solid var(--primary);
-            border-radius: 20px;
-            padding: 40px 20px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
+            background: #FFFFFF; border: 3px solid var(--primary); border-radius: 20px;
+            padding: 40px 20px; text-align: center; box-shadow: 0 20px 40px rgba(30, 58, 138, 0.1);
         }
-        .price-amount {
-            font-size: 5em;
-            font-weight: 900;
-            color: var(--text-main);
-            line-height: 1;
-            margin: 20px 0;
-        }
-        .price-amount span {
-            font-size: 0.4em;
-            vertical-align: top;
-        }
+        .price-amount { font-size: 5em; font-weight: 900; color: var(--text-main); line-height: 1; margin: 20px 0; }
+        .price-amount span { font-size: 0.4em; vertical-align: top; }
 
-        /* וואטסאפ צף */
+        /* Floating WA */
         .floating-wa { 
-            position: fixed; 
-            bottom: 25px; 
-            left: 25px; 
-            background: var(--secondary); 
-            color: white; 
-            width: 65px; 
-            height: 65px; 
-            border-radius: 50%; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2); 
-            text-decoration: none; 
-            z-index: 1000; 
-            transition: transform 0.2s;
+            position: fixed; bottom: 25px; left: 25px; background: var(--secondary); color: white; 
+            width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; 
+            align-items: center; box-shadow: 0 6px 20px rgba(0,0,0,0.2); text-decoration: none; z-index: 1000; transition: transform 0.2s;
         }
         .floating-wa:hover { transform: scale(1.1); }
         .floating-wa svg { width: 35px; height: 35px; fill: currentColor; }
 
-        /* התאמה למובייל */
         @media (min-width: 768px) {
             .features-grid, .testimonials { grid-template-columns: 1fr 1fr; }
             .hero h1 { font-size: 3.5em; }
             .about-box { padding: 50px; text-align: right; display: flex; align-items: center; gap: 30px; }
             .about-image { margin: 0; flex-shrink: 0; }
         }
-        
         .text-center { text-align: center; }
         .section-title { font-size: 2.2em; color: var(--primary); font-weight: 900; margin-bottom: 40px; }
     </style>
 </head>
 <body>
 
-    <!-- חלק פתיחה (Hero) + וידאו -->
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
             <h1>לפתור קובייה הונגרית ב-7 ימים – בקלות!</h1>
@@ -332,6 +153,23 @@
 
             <a href="#" class="cta-btn">רוצים להתחיל? דברו איתי בוואטסאפ 💬</a>
             <p class="sub-cta">רכישה מאובטחת, הגישה נשלחת מיידית לאחר התשלום.</p>
+        </div>
+    </section>
+
+    <!-- מי אני (חזר למעלה!) -->
+    <section class="section-white">
+        <div class="container">
+            <div class="about-box">
+                <div class="about-image">
+                    [תמונה של אורי מהתחרות]
+                </div>
+                <div>
+                    <h3 style="color: var(--primary); font-size: 1.8em;">נעים להכיר, אני אורי צירקין</h3>
+                    <p>אני בן 13, מתחרה בתחרויות קובייה הונגרית ומחזיק בשיא רשמי של 8 שניות!</p>
+                    <p>כשהתחלתי בגיל 7, לקח לי המון זמן למצוא סרטונים שיסבירו לי בצורה שבאמת אבין. החלטתי ללמד ילדים את המתנה הנפלאה הזו, אבל בצורה הרבה יותר קלה.</p>
+                    <p><strong>השיטה שבניתי היא זיקוק של כל מה שילד צריך:</strong> מישהו בגילו שמדבר אליו בגובה העיניים, נותן לו השראה ומראה לו שזה לגמרי אפשרי.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -375,25 +213,8 @@
         </div>
     </section>
 
-    <!-- מי אני -->
-    <section class="section-white">
-        <div class="container">
-            <div class="about-box">
-                <div class="about-image">
-                    [תמונה של אורי מהתחרות]
-                </div>
-                <div>
-                    <h3 style="color: var(--primary); font-size: 1.8em;">נעים להכיר, אני אורי צירקין</h3>
-                    <p>אני בן 13, מתחרה בתחרויות קובייה הונגרית ומחזיק בשיא רשמי של 8 שניות!</p>
-                    <p>כשהתחלתי בגיל 7, לקח לי המון זמן למצוא סרטונים שיסבירו לי בצורה שבאמת אבין. החלטתי ללמד ילדים את המתנה הנפלאה הזו, אבל בצורה הרבה יותר קלה.</p>
-                    <p><strong>השיטה שבניתי היא זיקוק של כל מה שילד צריך:</strong> מישהו בגילו שמדבר אליו בגובה העיניים, נותן לו השראה ומראה לו שזה לגמרי אפשרי.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- המלצות -->
-    <section class="section-light">
+    <section class="section-white">
         <div class="container">
             <h2 class="text-center section-title">מה אומרים ההורים והילדים?</h2>
             
@@ -414,8 +235,8 @@
         </div>
     </section>
 
-    <!-- אחריות (Risk Reversal) -->
-    <section class="section-white">
+    <!-- אחריות -->
+    <section class="section-light">
         <div class="container">
             <div class="guarantee-box">
                 <h3>🛡️ 100% אחריות למשך 14 ימים 🛡️</h3>
@@ -426,7 +247,7 @@
     </section>
 
     <!-- שאלות נפוצות -->
-    <section class="section-light">
+    <section class="section-white">
         <div class="container" style="max-width: 600px;">
             <h2 class="text-center section-title">שאלות נפוצות</h2>
             
@@ -447,8 +268,8 @@
         </div>
     </section>
 
-    <!-- קריאה אחרונה לפעולה (Price Box) -->
-    <section class="section-white">
+    <!-- קופסת מחיר -->
+    <section class="section-light">
         <div class="container" style="max-width: 600px;">
             <div class="price-box">
                 <h2 style="color: var(--primary); font-size: 2em; margin-bottom: 10px;">אין זמן טוב יותר מהרגע הזה</h2>
