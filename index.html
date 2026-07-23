@@ -7,22 +7,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700;800&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
     
     <style>
-        /* איפוס והגדרות בסיס למובייל */
+        /* איפוס והגדרות בסיס */
         *, *::before, *::after { box-sizing: border-box; }
         
         html, body {
-            overflow-x: hidden;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #F8FAFC;
-            color: #0F172A;
-            font-family: 'Assistant', sans-serif;
-            line-height: 1.6;
+            overflow-x: hidden; width: 100%; margin: 0; padding: 0;
+            background-color: #F8FAFC; color: #0F172A;
+            font-family: 'Assistant', sans-serif; line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        /* משתני צבעים */
         :root {
             --primary-blue: #1E3A8A; 
             --action-blue: #2563EB; 
@@ -38,27 +32,25 @@
         .container { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
         section { padding: 50px 0; }
         .bg-white { background-color: var(--white); }
-        
         h1, h2, h3, h4 { font-family: 'Rubik', sans-serif; line-height: 1.2; margin-top: 0; color: var(--text-dark); }
 
-        /* פס פסיכולוגי עליון */
-        .top-hook {
-            background-color: var(--accent-gold); color: #713F12; text-align: center;
-            padding: 12px 20px; font-weight: 800; font-size: 1.2rem;
-        }
-
-        /* אזור פתיחה */
+        /* הירו (Hero) והבאנרים */
         .hero { text-align: center; padding: 40px 0 20px 0; }
         .main-title { font-size: 3.2rem; font-weight: 900; color: var(--primary-blue); margin-bottom: 5px; }
-        .sub-title { font-size: 2rem; font-weight: 700; margin-bottom: 20px; }
+        .sub-title { font-size: 2rem; font-weight: 700; margin-bottom: 25px; }
+        
+        .hook-banner {
+            background-color: var(--primary-blue); color: var(--white);
+            padding: 12px 20px; font-weight: 700; font-size: 1.25rem;
+            border-radius: 8px; margin: 0 auto 10px auto; max-width: 650px;
+        }
         
         .summer-banner {
             background: linear-gradient(135deg, #FDE047 0%, #FBBF24 100%); color: #713F12;
             padding: 8px 24px; border-radius: 50px; display: inline-block; font-weight: 800;
-            font-size: 1.3rem; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(251, 191, 36, 0.2);
+            font-size: 1.25rem; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(251, 191, 36, 0.2);
         }
 
-        /* סרטון */
         .video-wrapper {
             width: 100%; background: #E2E8F0; border-radius: 12px; padding: 120px 20px;
             border: 2px dashed #94A3B8; margin-bottom: 30px; position: relative;
@@ -69,7 +61,7 @@
             position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
         }
 
-        /* כפתורי עוגן (החלקה למטה) */
+        /* כפתורי עוגן */
         .anchor-btn {
             display: block; width: 100%; max-width: 400px; margin: 0 auto;
             background: linear-gradient(135deg, var(--action-blue) 0%, var(--primary-blue) 100%);
@@ -79,7 +71,18 @@
         }
         .anchor-btn:hover { transform: translateY(-2px); }
 
-        /* הקלף המנצח: אורי */
+        /* למה קובייה (נקי ובוגר) */
+        .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 35px; color: var(--primary-blue); }
+        .why-box {
+            background: var(--white); border-radius: 12px; padding: 35px;
+            border: 1px solid #E2E8F0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: right;
+        }
+        .why-box strong { color: var(--primary-blue); font-size: 1.3rem; display: block; margin-bottom: 5px; }
+        .why-box p { font-size: 1.2rem; margin-bottom: 20px; color: var(--text-gray); }
+        .why-box p:last-child { margin-bottom: 0; }
+
+        /* קלף מנצח: אורי */
         .uri-section {
             background-color: var(--primary-blue); color: var(--white);
             border-radius: 16px; padding: 40px 30px; margin: 20px 0 40px 0;
@@ -94,25 +97,8 @@
         .uri-text p { font-size: 1.25rem; margin-bottom: 15px; }
         .uri-text strong { color: var(--accent-gold); font-size: 1.35rem; }
 
-        /* המלצות */
-        .section-title { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 35px; color: var(--primary-blue); }
-        .testimonial-card {
-            background: var(--light-gray); border: 1px solid #E2E8F0; padding: 25px;
-            border-radius: 12px; margin-bottom: 20px; border-right: 4px solid var(--accent-gold);
-        }
-        .stars { color: var(--accent-gold); font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .testimonial-text { font-size: 1.2rem; font-style: italic; font-weight: 600; margin-bottom: 15px; }
-        .testimonial-author { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); }
-
-        /* למה דווקא קובייה */
-        .why-box {
-            background: var(--white); border-radius: 12px; padding: 30px;
-            border: 1px solid #E2E8F0; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-        }
-        .why-box p { font-size: 1.3rem; margin-bottom: 15px; display: flex; gap: 10px; }
-        .why-box p:last-child { margin-bottom: 0; }
-
-        /* מה מקבלים */
+        /* מה מקבלים (כולל הפסקה שהוזזה) */
+        .intro-text { font-size: 1.25rem; font-weight: 600; text-align: center; margin-bottom: 30px; color: var(--text-dark); max-width: 650px; margin-left: auto; margin-right: auto; }
         .benefits-list { list-style: none; padding: 0; margin: 0; }
         .benefits-list li {
             background: var(--light-gray); padding: 20px; border-radius: 8px;
@@ -120,6 +106,21 @@
         }
         .benefits-list strong { display: block; font-size: 1.35rem; margin-bottom: 5px; color: var(--text-dark); }
         .benefits-list span { color: var(--text-gray); font-size: 1.2rem; }
+
+        /* המלצות עם תמונות */
+        .testimonial-card {
+            background: var(--light-gray); border: 1px solid #E2E8F0; padding: 25px;
+            border-radius: 12px; margin-bottom: 20px; border-right: 4px solid var(--accent-gold);
+            display: flex; flex-direction: column; gap: 15px;
+        }
+        .testimonial-header { display: flex; align-items: center; gap: 15px; }
+        .testimonial-img-placeholder {
+            width: 60px; height: 60px; border-radius: 50%; background: #CBD5E1;
+            display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: #475569; font-weight: bold; text-align: center; line-height: 1.1;
+        }
+        .testimonial-author { font-size: 1.1rem; font-weight: 700; color: var(--primary-blue); }
+        .stars { color: var(--accent-gold); font-size: 1.1rem; margin-top: 2px; }
+        .testimonial-text { font-size: 1.15rem; font-style: italic; font-weight: 600; color: var(--text-dark); }
 
         /* שאלות נפוצות */
         .faq-item { background: var(--white); border-radius: 8px; margin-bottom: 12px; border: 1px solid #E2E8F0; }
@@ -129,21 +130,28 @@
         .faq-item[open] summary::after { content: '-'; }
         .faq-item p { padding: 0 20px 20px; margin: 0; color: var(--text-gray); font-size: 1.15rem; }
 
-        /* קופסת תשלום (הקופה) */
+        /* אזור הקופה ותשלום */
         .order-section { padding: 60px 0 80px 0; }
         .order-box {
             background: var(--white); border: 5px solid var(--primary-blue);
             border-radius: 16px; padding: 40px 25px; text-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); max-width: 500px; margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); max-width: 550px; margin: 0 auto;
         }
         .order-box h3 { font-size: 1.8rem; color: var(--primary-blue); margin-bottom: 5px; }
         .price { font-size: 4.5rem; font-weight: 900; color: var(--text-dark); margin: 15px 0; font-family: 'Rubik', sans-serif; line-height: 1;}
         .price span { font-size: 0.4em; vertical-align: super; }
         
+        .personal-promise {
+            background: #FFFBEB; border: 1px solid #FDE68A; border-radius: 8px;
+            padding: 20px; text-align: right; margin-bottom: 25px;
+        }
+        .personal-promise strong { color: #B45309; display: block; font-size: 1.25rem; margin-bottom: 5px; }
+        .personal-promise p { margin: 0; color: #713F12; font-size: 1.1rem; line-height: 1.5; }
+
         .whatsapp-explanation {
             background: #F0FDF4; border: 1px solid #BBF7D0; color: #166534;
-            padding: 15px; border-radius: 8px; font-size: 1.15rem; font-weight: 600;
-            margin: 20px 0 25px 0; line-height: 1.4;
+            padding: 15px; border-radius: 8px; font-size: 1.1rem; font-weight: 600;
+            margin: 0 0 25px 0; line-height: 1.4;
         }
 
         .whatsapp-btn {
@@ -159,7 +167,8 @@
         @media (max-width: 600px) {
             .main-title { font-size: 2.6rem; }
             .sub-title { font-size: 1.6rem; }
-            .summer-banner { font-size: 1.15rem; }
+            .hook-banner { font-size: 1.1rem; padding: 10px 15px; }
+            .summer-banner { font-size: 1.1rem; }
             .uri-section { padding: 30px 20px; }
             .uri-section h2 { font-size: 1.8rem; }
             .section-title { font-size: 1.9rem; }
@@ -170,35 +179,51 @@
 </head>
 <body>
 
-    <!-- הוק עליון -->
-    <div class="top-hook">
-        המשחק שיוציא את הילד מהמסכים וייתן לו תחושת הצלחה מטורפת ב-7 ימים
-    </div>
-
-    <!-- פתיחה -->
+    <!-- פתיחה עם הבאנרים -->
     <section class="hero bg-white">
         <div class="container">
             <h1 class="main-title">לפתור קובייה הונגרית</h1>
-            <h2 class="sub-title">מאפס ידע ל-100% הצלחה!</h2>
+            <h2 class="sub-title">מאפס ידע ל-100% הצלחה ב-7 ימים!</h2>
+            
+            <div class="hook-banner">
+                המשחק שיוציא את הילד מהמסכים וייתן לו תחושת הצלחה מטורפת
+            </div>
             
             <div class="summer-banner">תעסוקה מושלמת לחופשים ולשעות הפנאי!</div>
             
-            <p style="font-size: 1.3rem; color: var(--text-gray); max-width: 600px; margin: 0 auto 30px auto;">
-                קורס דיגיטלי בשיטה ייחודית, מהירה ופשוטה. מתאים למי שמעולם לא החזיק קובייה. שיעורים קצרים, לימוד חווייתי ובגובה העיניים.
-            </p>
-
             <div class="video-wrapper">
                 [כאן ייכנס סרטון ההצצה של אורי]
             </div>
 
-            <a href="#checkout" class="anchor-btn">לכל הפרטים והצטרפות ⬇</a>
+            <a href="#checkout" class="anchor-btn">לחצו לפרטים והצטרפות ⬇</a>
         </div>
     </section>
 
-    <!-- אורי: הקלף המנצח (מיד אחרי הפתיחה) -->
+    <!-- היתרון קודם (למה קובייה) בצורה נקייה -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">למה דווקא קובייה הונגרית?</h2>
+            <div class="why-box">
+                <div>
+                    <strong>חוויית הצלחה מיידית</strong>
+                    <p>הקובייה היא כלי מיוחד במינו שבונה ביטחון עצמי גבוה, משפר את יכולת הריכוז ומעניק רוגע נפשי.</p>
+                </div>
+                <div>
+                    <strong>התפתחות מחוץ למסך</strong>
+                    <p>פותח עולם גדול ובלתי נגמר של התפתחות אישית וקוגניטיבית, הרחק מהטלפון והטלוויזיה.</p>
+                </div>
+                <div>
+                    <strong>תחושת מסוגלות וגאווה</strong>
+                    <p>היכולת לפתור קובייה מעניקה לילד תחושת מסוגלות אדירה ואת היכולת להרשים את הסביבה בגאונות שלו.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- אורי במרכז -->
     <div class="container">
         <section class="uri-section">
-            <h2>נעים להכיר, אני אורי</h2>
+            <h2>מי יעביר את הקורס?</h2>
             <div class="uri-img">[תמונה של אורי]</div>
             <div class="uri-text">
                 <p><strong>אני אורי צירקין, בן 13 מכרכור.<br>מתחרה בתחרויות קובייה הונגרית ומחזיק בשיא רשמי של 8 שניות.</strong></p>
@@ -208,53 +233,15 @@
         </section>
     </div>
 
-    <!-- המלצות (הוכחה חברתית) -->
+    <!-- מה מקבלים (כולל ההסבר שהוזז) -->
     <section class="bg-white">
         <div class="container">
-            <h2 class="section-title">מה אומרים ההורים והילדים?</h2>
+            <h2 class="section-title">איך זה עובד ומה תקבלו בקורס?</h2>
             
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-text">"הצלחת להדביק את הבן שלי בחיידק! הוא לא עוזב את הקובייה כבר שבוע, וסוף סוף משהו שמלהיב אותו והוא לא במסך... פשוט קורס חובה."</div>
-                <div class="testimonial-author">מיכל, אמא של נועם (בן 10)</div>
-            </div>
+            <p class="intro-text">
+                קורס דיגיטלי בשיטה ייחודית, מהירה ופשוטה. מתאים למי שמעולם לא החזיק קובייה. שיעורים קצרים, לימוד חווייתי ובגובה העיניים.
+            </p>
 
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-text">"ניסיתי ללמוד ממיליון סרטונים ביוטיוב ואף פעם לא הבנתי את השלב האחרון. אורי מסביר בסבלנות ובפשטות וזה פשוט גאוני, קלטתי את זה מיד!"</div>
-                <div class="testimonial-author">איתי, בן 14</div>
-            </div>
-
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <div class="testimonial-text">"הילדה שלי הייתה בטוחה שזה רק לילדים מחוננים. אורי נתן לה כל כך הרבה ביטחון. לראות את הגאווה שלה כשהיא פתרה בעצמה – שווה כל שקל."</div>
-                <div class="testimonial-author">רוני, אמא של מאיה (בת 9)</div>
-            </div>
-
-            <div style="text-align: center; margin-top: 35px;">
-                <a href="#checkout" class="anchor-btn" style="background: transparent; color: var(--action-blue); box-shadow: none; border: 2px solid var(--action-blue);">
-                    גם אני רוצה את הקורס ⬇
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- למה קובייה הונגרית -->
-    <section>
-        <div class="container">
-            <h2 class="section-title">למה דווקא קובייה הונגרית?</h2>
-            <div class="why-box">
-                <p>🎯 <span><strong>חוויית הצלחה מיידית:</strong> בונה ביטחון עצמי גבוה, יכולת ריכוז ורוגע נפשי.</span></p>
-                <p>🧠 <span><strong>מחוץ למסך:</strong> פותח עולם גדול של התפתחות אישית וקוגניטיבית, הרחק מהמסכים.</span></p>
-                <p>⭐ <span><strong>תחושת גאווה:</strong> היכולת להרשים את כולם בגאונות הבלתי מתפשרת של הילד ( :</span></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- מה מקבלים -->
-    <section class="bg-white">
-        <div class="container">
-            <h2 class="section-title">מה תקבלו בקורס?</h2>
             <ul class="benefits-list">
                 <li>
                     <strong>7 סרטוני וידאו (אחד לכל יום)</strong>
@@ -262,7 +249,7 @@
                 </li>
                 <li>
                     <strong>הסבר ייחודי בשיטת הסיפור</strong>
-                    <span>פשוט, קל להבנה, קל לזכירה ובגובה העיניים. שלא תמצאו בשום מקום אחר.</span>
+                    <span>פשוט, קל להבנה, קל לזכירה. שלא תמצאו בשום מקום אחר.</span>
                 </li>
                 <li>
                     <strong>מאפס ידע לפתרון מלא</strong>
@@ -276,11 +263,62 @@
         </div>
     </section>
 
-    <!-- שאלות נפוצות -->
+    <!-- המלצות עם תמונות -->
     <section>
+        <div class="container">
+            <h2 class="section-title">מה אומרים ההורים והילדים?</h2>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-img-placeholder">תמונה<br>של מיכל</div>
+                    <div>
+                        <div class="testimonial-author">מיכל, אמא של נועם (בן 10)</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">"הצלחת להדביק את הבן שלי בחיידק! הוא לא עוזב את הקובייה כבר שבוע, וסוף סוף משהו שמלהיב אותו והוא לא במסך... פשוט קורס חובה."</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-img-placeholder">תמונה<br>של איתי</div>
+                    <div>
+                        <div class="testimonial-author">איתי, בן 14</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">"ניסיתי ללמוד ממיליון סרטונים ביוטיוב ואף פעם לא הבנתי את השלב האחרון. אורי מסביר בסבלנות ובפשטות וזה פשוט גאוני, קלטתי את זה מיד!"</div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-img-placeholder">תמונה<br>של רוני</div>
+                    <div>
+                        <div class="testimonial-author">רוני, אמא של מאיה (בת 9)</div>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+                <div class="testimonial-text">"הילדה שלי הייתה בטוחה שזה רק לילדים מחוננים. אורי נתן לה כל כך הרבה ביטחון. לראות את הגאווה שלה כשהיא פתרה בעצמה – שווה כל שקל."</div>
+            </div>
+
+            <div style="text-align: center; margin-top: 35px;">
+                <a href="#checkout" class="anchor-btn" style="background: transparent; color: var(--action-blue); box-shadow: none; border: 2px solid var(--action-blue);">
+                    לחצו לפרטים והצטרפות ⬇
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- שאלות נפוצות (כולל החדשה) -->
+    <section class="bg-white">
         <div class="container" style="max-width: 650px;">
             <h2 class="section-title">שאלות נפוצות</h2>
             
+            <details class="faq-item">
+                <summary>האם צריך לרכוש קובייה מיוחדת לקורס?</summary>
+                <p>ממש לא. כל קובייה הונגרית סטנדרטית 3x3 שיש לכם בבית תתאים לחלוטין. אם אין לכם אחת כזו, אפשר למצוא בכל חנות צעצועים בכמה עשרות שקלים.</p>
+            </details>
+
             <details class="faq-item">
                 <summary>האם אני צריך לשבת עם הילד ולעזור לו?</summary>
                 <p>ילדים מעל גיל 9 לרוב מסתדרים לגמרי לבד! מתחת לגיל 9, לפעמים צריך קצת עזרה מההורים בהתחלה. זה הופך לזמן איכות מדהים של הורה וילד ביחד, ודי מהר תראו שהם קולטים את הרעיון והופכים לעצמאיים בשטח.</p>
@@ -293,8 +331,8 @@
         </div>
     </section>
 
-    <!-- הקופה (המעבר לוואטסאפ) -->
-    <section id="checkout" class="order-section bg-white">
+    <!-- אזור הקופה -->
+    <section id="checkout" class="order-section">
         <div class="container">
             <h2 class="section-title" style="color: var(--accent-gold); margin-bottom: 10px;">אין זמן טוב יותר מהרגע הזה</h2>
             <p style="text-align: center; font-size: 1.4rem; font-weight: 700; margin-bottom: 30px;">קליק אחד והנכס הזה אצלך לכל החיים</p>
@@ -305,9 +343,14 @@
                 
                 <div class="price"><span>₪</span>111</div>
                 
+                <div class="personal-promise">
+                    <strong>ההבטחה האישית שלי אליכם:</strong>
+                    <p>אני פה לכל שאלה! אם הילד נתקע בשלב מסוים, אתם תמיד יכולים לשלוח לי הודעה בוואטסאפ ואני אעזור לו בשמחה עד שיצליח לפתור את הקובייה. אתם לא לבד!</p>
+                </div>
+
                 <div class="whatsapp-explanation">
                     לחיצה על הכפתור תעביר אתכם לוואטסאפ שלי.<br>
-                    שם נבצע תשלום מהיר (Bit / PayBox) ותקבלו את הגישה לקורס באופן מיידי!
+                    שם נבצע תשלום מהיר (Bit / PayBox) ותקבלו את הגישה לקורס באופן מיידי.
                 </div>
 
                 <a href="https://wa.me/972546881422?text=היי%20אורי,%20הגעתי%20מדף%20הנחיתה%20ואני%20רוצה%20לרכוש%20את%20הקורס!%20אשמח%20לתאם%20תשלום%20בביט%20או%20פייבוקס" class="whatsapp-btn" target="_blank">
