@@ -118,7 +118,7 @@
             width: 45px; height: 45px; border-radius: 50%; background: #E2E8F0;
             display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
-        .testimonial-author { font-size: 1.1rem; font-weight: 700; color: #050505; line-height: 1.2; margin-top: 5px; } /* תיקון מיקום השם */
+        .testimonial-author { font-size: 1.1rem; font-weight: 700; color: #050505; line-height: 1.2; margin-top: 5px; }
         .testimonial-text { font-size: 1.15rem; font-weight: 400; color: #050505; margin-top: 5px; }
         
         /* שורת הלייקים והתגובות התחתונה */
@@ -173,8 +173,38 @@
         }
         .order-content { max-width: 500px; margin: 0 auto; }
         .order-content h3 { font-size: 2.2rem; color: var(--white); margin-bottom: 5px; }
-        .order-content p.subtitle { font-size: 1.3rem; color: #BAE6FD; margin-bottom: 25px; }
+        .order-content p.subtitle { font-size: 1.3rem; color: #BAE6FD; margin-bottom: 15px; }
         
+        /* עיצוב המחיר החדש והמבצע */
+        .price-container {
+            margin: 20px 0 25px 0;
+        }
+        .promo-text {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        .price-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .old-price {
+            font-size: 1.8rem;
+            color: #94A3B8;
+            text-decoration: line-through;
+            font-weight: 600;
+        }
+        .price { 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            color: var(--white); 
+            font-family: 'Assistant', sans-serif; 
+            line-height: 1;
+        }
+
         /* ההבטחה האישית */
         .personal-promise {
             background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2);
@@ -182,9 +212,6 @@
         }
         .personal-promise strong { color: var(--accent-gold); display: block; font-size: 1.4rem; margin-bottom: 10px; }
         .personal-promise p { margin: 0; color: var(--white); font-size: 1.15rem; line-height: 1.5; font-weight: 400; }
-
-        /* מחיר מתוקן */
-        .price { font-size: 3.5rem; font-weight: 700; color: var(--white); font-family: 'Assistant', sans-serif; margin-bottom: 25px; line-height: 1;}
 
         /* כפתור משני לשאלות */
         .secondary-btn {
@@ -207,6 +234,8 @@
             .main-btn { font-size: 1.25rem; }
             .order-content h3 { font-size: 1.8rem; }
             .price { font-size: 3.2rem; }
+            .old-price { font-size: 1.5rem; }
+            .promo-text { font-size: 1.1rem; }
             .personal-promise strong { font-size: 1.25rem; }
         }
     </style>
@@ -261,7 +290,6 @@
             <div class="testimonial-card">
                 <div class="testimonial-header">
                     <div class="avatar-icon">
-                        <!-- אייקון משתמש -->
                         <svg viewBox="0 0 24 24" width="28" height="28" fill="#94A3B8"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
                     </div>
                     <div>
@@ -418,12 +446,19 @@
             <h3>קורס קובייה הונגרית מלא</h3>
             <p class="subtitle">מאפס לפתרון מלא ב-7 ימים</p>
             
+            <!-- אזור המחיר המעודכן - ממוקם כאן -->
+            <div class="price-container">
+                <div class="promo-text">מחיר מבצע לזמן הקרוב בלבד</div>
+                <div class="price-box">
+                    <span class="old-price">320 ש"ח</span>
+                    <span class="price">97 ש"ח</span>
+                </div>
+            </div>
+
             <div class="personal-promise">
                 <strong>ההבטחה האישית שלי אליכם:</strong>
                 <p>אני פה לכל שאלה ובעיה. אפשר תמיד לשלוח לי הודעה בוואטסאפ. אתם לא לבד!</p>
             </div>
-            
-            <div class="price">₪97</div>
             
             <a href="https://wa.me/972546881422?text=היי%20אורי,%20הגעתי%20מדף%20הנחיתה%20ואני%20רוצה%20לרכוש%20את%20הקורס!" class="main-btn" target="_blank">
                 למעבר לתשלום בוואטסאפ 💬
